@@ -27,6 +27,7 @@
 ### Font
 * **삼국지3글꼴** (leedheo) : https://github.com/hurss/fonts (MIT)
 * **Neo둥근모** (Dalgona) (SIL OpenFont License 1.1)
+* **달무리** ([RanolP](https://github.com/RanolP)): https://ranolp.github.io/dalmoori-font/
 
 ### Tool
 * WolframAlpha
