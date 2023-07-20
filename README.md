@@ -1,7 +1,7 @@
 <img src="media/logo.png" width="full"/>
 
 토피도는 수중 탄막 슈팅 웹 게임입니다.
-동아리 [UnreVR](https://github.com/UNREVR) 프로젝트로 개발하였습니다.  
+동아리 [UnreVR](https://github.com/UNREVR)의 프로젝트로 개발하였습니다.  
 개발기간은 7/14 ~ 7/19 5일입니다.
 
 **[torpedo.zlfn.space](torpedo.zlfn.space)** 에서 플레이 할 수 있습니다.
@@ -10,8 +10,22 @@
 * 방향키로 이동
 * 스페이스로 어뢰 발사
 ### 물고기
-<img src="./public/resource/greenfish/greenfish1.png" width="200" style="image-rendering:optimizeSpeed"/>
+![Fish](public/resource/greenfish/greenfish1.png)
+![Fish](public/resource/virdianfish/virdianfish1.png)
+![Fish](public/resource/forestfish/forestfish1.png)
+![Fish](public/resource/mintfish/mintfish1.png)
+![Fish](public/resource/yellowfish/open_yellowfish1.png)
+![Fish](public/resource/purplefish/open_purplefish1.png)
+![Fish](public/resource/jellyfish/jellyfish1.png)  
+Aseprite로 그렸습니다.  
+귀엽죠
 
+### 아이템
+![item](public/resource/item/heartrestore.png)
+![item](public/resource/item/torpedoupgrade.png)
+![item](public/resource/item/speedup.png)
+![item](public/resource/item/floatup.png)  
+각각 체력회복, 미사일 장전 속도 증가, 좌우 속도 증가, 상하 속도 증가입니다.
 
 
 ## CREDIT
