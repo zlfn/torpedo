@@ -92,7 +92,7 @@ export default function Home() {
 
     return (
         <>
-            <p className="absolute top-64 right-1/2 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center text-sky-700 z-0 font-Sam3 centerLogo">Torpedo</p>
+            <p className="absolute top-64 right-1/2 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center z-0 font-Sam3 centerLogo">Torpedo</p>
             <div className="absolute top-0 w-full scoreDiv">
                 <p ref={scoreRef1} className="sticky z-10 text-center text-blue-400 text-opacity-50 font-NeoDung text-4xl mobileOff score">{scoreText}</p>
                 <p ref={scoreRef2} className="sticky -z-4 text-center text-white font-NeoDung text-4xl mobileOff score">{scoreText}</p>
