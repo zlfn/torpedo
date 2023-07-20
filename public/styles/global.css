@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'Sam3KRFont';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_eight@1.0/Sam3KRFont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'KIMM_Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2212@1.0/KIMM_Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NeoDunggeunmo';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.3/NeoDunggeunmo.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'dalmoori';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2102-01@1.0/dalmoori.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-Sam3 {
+    font-family: Sam3KRFont
+}
+
+.font-KIMM {
+    font-family: KIMM_Bold
+}
+
+.font-NeoDung {
+    font-family: NeoDunggeunmo
+}
+
+.font-Dalmoori {
+    font-family: Dalmoori
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (min-width: 1200px) {
+    html, body {
+        overflow-x:clip;
+        overflow-y:clip;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    html, body {
+        overflow-x: hidden;
+        overflow-y: hidden; /*TODO: 밑으로 내리면 랭킹 페이지*/
+    }
+    body {
+        position: relative;
+    }
+}
+
+.mobileOn {
+    visibility: hidden;
+}
+.mobileOff {
+    visibility : visible
+}
+
+@media screen and (max-width: 1200px) {
+    .mobileOn {
+        visibility: visible;
+    }
+    .mobileOff {
+        visibility: hidden;
+    }
+}

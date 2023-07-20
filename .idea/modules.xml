@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/seastory.iml" filepath="$PROJECT_DIR$/.idea/seastory.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../torpedo/.idea/torpedo.iml" filepath="$PROJECT_DIR$/../torpedo/.idea/torpedo.iml" />
     </modules>
   </component>
 </project>

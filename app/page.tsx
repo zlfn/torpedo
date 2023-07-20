@@ -1,113 +1,119 @@
-import Image from 'next/image'
+'use client'
+
+import '@/public/styles/ocean.css'
+import '@/public/styles/index.css'
+import '@/public/styles/game.css'
+
+import Drawer from './drawer'
+import Game from './game'
+
+import {setTimeout} from "timers";
+import {useEffect, useRef, useState} from "react";
+import {durationScrollTo} from "@/public/scripts/scroll";
+import {ranking} from "@/app/ranking";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    const [gamePlay, setGamePlay] = useState(false)
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+    const startButtonRef = useRef<HTMLButtonElement>(null);
+    const gameRef = useRef<HTMLDivElement>(null);
+    const scoreRef1 = useRef<HTMLParagraphElement>(null);
+    const scoreRef2 = useRef<HTMLParagraphElement>(null);
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+    function handleClick() {
+        if(window.innerWidth >= 1200) {
+            setGamePlay(true);
+        }
+    }
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+    useEffect(()=>{
+        updateButton()
+        window.scrollTo({ top: 0});
+        window.addEventListener("resize", updateButton);
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore the Next.js 13 playground.
-          </p>
-        </a>
+        document.addEventListener("keydown", function (e) {
+            if ( e.ctrlKey &&
+                (e.key == "=" || e.key == "+" ||
+                    e.key == "-" || e.key == "_")
+            ) {
+                e.preventDefault();
+            }
+        });
+        document.addEventListener(
+            "wheel",
+            function (e) {
+                if (e.ctrlKey) {
+                    e.preventDefault();
+                }
+            },
+            {
+                passive: false
+            }
+        );
+    }, [])
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+    function updateButton() {
+        const button = startButtonRef.current!;
+        button.disabled = window.innerWidth < 1200;
+    }
+
+    let score = 0;
+    //const scoreText = String(score).padStart(9, '0');
+    const scoreText = String(score);
+
+    ///DEBUG
+    function endGame() {
+        durationScrollTo(0, 2000, 2);
+        setTimeout(()=>(setGamePlay(false)), 2000);
+    }
+
+    function changeScore(s : number) {
+        score = s;
+        //scoreRef1.current!.textContent = String(score).padStart(9, '0');
+        //scoreRef2.current!.textContent = String(score).padStart(9, '0');
+        scoreRef1.current!.textContent = String(score);
+        scoreRef2.current!.textContent = String(score);
+    }
+
+    function GamePlay() {
+        if(gamePlay) {
+            return <>
+                <div ref={gameRef} className="absolute gameDiv">
+                    <Game gameRef={gameRef} score={score} addScore={(a:number)=>{changeScore(score+=a)}} endGame={()=>endGame()}/>
+                </div>
+            </>
+        }
+        else {
+            return <>
+                <div ref={gameRef} className="absolute gameDiv"></div>
+            </>
+        }
+    }
+
+    return (
+        <>
+            <p className="absolute top-64 right-1/2 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center text-sky-700 z-0 font-Sam3 centerLogo">Torpedo</p>
+            <div className="absolute top-0 w-full scoreDiv">
+                <p ref={scoreRef1} className="sticky z-10 text-center text-blue-400 text-opacity-50 font-NeoDung text-4xl mobileOff score">{scoreText}</p>
+                <p ref={scoreRef2} className="sticky -z-4 text-center text-white font-NeoDung text-4xl mobileOff score">{scoreText}</p>
+            </div>
+            <div className="absolute -z-5 wave"></div>
+            <div className="absolute -z-3 wave"></div>
+            <div className="absolute -z-1 ocean">
+            </div>
+            <div className="relative top-96 content">
+                <p className="absolute top-52 text-red-500 font-NeoDung text-center mobileOn">가로 화면에서 플레이 가능합니다.</p>
+
+                {/*material tailwind*/}
+                <button
+                    ref={startButtonRef}
+                    className="z-11 absolute top-32 middle none center rounded-lg bg-blue-800 py-3 text-white shadow-md shadow-blue-800/20 transition-all hover:shadow-lg hover:shadow-blue-800/40 focus:opacity-[0.85] focus:shadow-none active:opacity-[0.85] active:shadow-none disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none button"
+                    data-ripple-light="true"
+                    onClick={()=>handleClick()}>
+                    PLAY
+                </button>
+            </div>
+            <GamePlay/>
+        </>
+    );
 }

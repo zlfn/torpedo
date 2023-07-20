@@ -1,0 +1,100 @@
+body {
+    color:#ffffff;
+    background-color: #0a1f38;
+}
+
+.score {
+    top: 21rem;
+    right: 50%;
+}
+
+.scoreDiv {
+    height: 113vh;
+}
+
+/*https://codepen.io/ryandsouza13/pen/yEBJQV*/
+.centerLogo {
+    right: 50%;
+    transform: translate(50%,-50%);
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191;
+}
+
+.logo {
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #f5f5f5;
+    text-shadow: 1px 1px 1px #919191,
+    1px 2px 1px #919191,
+    1px 3px 1px #919191,
+    1px 4px 1px #919191,
+    1px 5px 1px #919191,
+    1px 6px 1px #919191,
+    1px 7px 1px #919191,
+    1px 8px 1px #919191,
+    1px 9px 1px #919191,
+    1px 10px 1px #919191;
+}
+
+.content {
+    display:flex;
+    justify-content: center;
+    height: 40%;
+}
+
+
+.button {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.8em 1.32em 0.7em;
+    line-height: 1;
+    border-radius: 1em;
+    min-width: 13em;
+    max-height: 3em;
+    text-decoration: none;
+    font-family: NeoDunggeunmo;
+    font-size: 2rem;
+}
+
+.input {
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.8em 1.32em 0.7em;
+    line-height: 1;
+    border-radius: 1em;
+    min-width: 14em;
+    max-height: 3em;
+    text-decoration: none;
+    font-family: NeoDunggeunmo;
+    font-size: 1.2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .button {
+        min-width: 12em;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .button {
+        min-width: 10em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .button {
+        min-width: 9em;
+    }
+}
+
