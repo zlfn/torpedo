@@ -31,7 +31,7 @@ Aseprite로 그렸습니다.
 ## CREDIT
 ### FRAMEWORK
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Nextjs-logo.svg/591px-Nextjs-logo.svg.png" alt="drawing" width="300"/><br> 
-<img src="https://tailwindcss.com/_next/static/media/tailwindcss-logotype-white.944c5d0ef628083bb316f9b3d643385c86bcdb3d.svg" alt="drawing" width="300"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/95/Tailwind_CSS_logo.svg" alt="drawing" width="300"/>
 
 ### RESOURCE
 
