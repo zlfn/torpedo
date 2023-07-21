@@ -53,9 +53,9 @@
 
 ### Font
 * **[삼국지3글꼴](https://github.com/hurss/fonts)** (leedheo) : (MIT)
+* **[DOS이야기](https://github.com/hurss/fonts)** (leedheo) : (MIT)
 * **Neo둥근모** (Dalgona) (SIL OpenFont License 1.1)
 * **[달무리](https://ranolp.github.io/dalmoori-font/)** ([RanolP](https://github.com/RanolP)) : (MIT)
-
 ### Tool
 * [WebStorm](https://www.jetbrains.com/webstorm/)
 * [WolframAlpha](https://www.wolframalpha.com/)

@@ -86,12 +86,14 @@ export default function Home() {
         else {
             return <>
                 <div ref={gameRef} className="absolute gameDiv"></div>
+                <p className="fixed text-1xl right-3 top-3 mobileOff font-DOS">SPACE to launch torpedo<br/>ARROW to move submarine</p>
             </>
         }
     }
 
     return (
         <>
+            <link rel="stylesheet" href="https://unpkg.com/keyboard-css@1.2.4/dist/css/main.min.css" />
             <p className="absolute top-64 right-1/2 text-5xl sm:text-7xl md:text-8xl lg:text-9xl text-center z-0 font-Sam3 centerLogo">Torpedo</p>
             <div className="absolute top-0 w-full scoreDiv">
                 <p ref={scoreRef1} className="sticky z-10 text-center text-blue-400 text-opacity-50 font-NeoDung text-4xl mobileOff score">{scoreText}</p>

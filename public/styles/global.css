@@ -30,6 +30,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'DOSIyagiMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2304-2@1.0/DOSIyagiMedium.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
 .font-Sam3 {
     font-family: Sam3KRFont
 }
@@ -44,6 +51,10 @@
 
 .font-Dalmoori {
     font-family: Dalmoori
+}
+
+.font-DOS {
+    font-family: DOSIyagiMedium
 }
 
 html, body {
