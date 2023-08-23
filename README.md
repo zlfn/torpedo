@@ -60,3 +60,12 @@
 * [WebStorm](https://www.jetbrains.com/webstorm/)
 * [WolframAlpha](https://www.wolframalpha.com/)
 * [Aseprite](https://github.com/aseprite/aseprite)
+
+## Docker
+Docker 이미지 빌드하기
+```bash
+yarn add jest-worker --save-dev
+next build
+docker build -t torpedo .
+```
+아마도 이러면 될 것
