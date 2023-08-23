@@ -6,7 +6,7 @@
 
 별도 명시가 없는 한 코드는 **GNU GPL 3.0**, 리소스는 **CC-BY-NC-SA 4.0**으로 배포됩니다.
 
-**[torpedo.zlfn.space](torpedo.zlfn.space)** 에서 플레이 할 수 있습니다.
+**[torpedo.zlfn.space](https://torpedo.zlfn.space)** 에서 플레이 할 수 있습니다.
 
 ### 조작키
 * 방향키로 이동
